@@ -2,6 +2,8 @@ package model;
 
 import java.io.Serializable;
 
+import com.mysql.cj.jdbc.Blob;
+
 public class UserBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -9,6 +11,7 @@ public class UserBean implements Serializable {
 	private String name;
 	private String type;
 	private String live;
+	private Blob img;
 
 	public UserBean(){};
 
@@ -36,8 +39,15 @@ public class UserBean implements Serializable {
 	public String getLive() {
 		return this.live;
 	}
-	public void setLive(String sex) {
+	public void setLive(String live) {
 		this.live = live;
+	}
+
+	public Blob getImg() {
+		return this.img;
+	}
+	public void setImg(Blob img) {
+		this.img = img;
 	}
 
 }
