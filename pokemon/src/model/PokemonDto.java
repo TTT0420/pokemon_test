@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import com.mysql.cj.jdbc.Blob;
 
-public class UserBean implements Serializable {
+public class PokemonDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private int id;
@@ -13,7 +13,7 @@ public class UserBean implements Serializable {
 	private String live;
 	private Blob img;
 
-	public UserBean(){};
+	public PokemonDto(){};
 
 	public int getId() {
 		return this.id;

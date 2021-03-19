@@ -1,4 +1,4 @@
-package model;
+package DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,6 +9,8 @@ import java.util.ArrayList;
 
 import com.mysql.cj.jdbc.Blob;
 
+import model.PokemonDto;
+
 public class PokemonDAO {
 	Connection conn = null;
 	String url = "jdbc:mysql://localhost:3306/bananaaulait?characterEncoding=UTF-8&serverTimezone=JST";
@@ -16,9 +18,9 @@ public class PokemonDAO {
 	String pass = "rvt/7694";
 
 	//テーブル取得
-	public UserBean findPokemon(UserBean ud) {
+	public ArrayList<PokemonDto> findPokemon() {
 		//戻り値の用意
-		ArrayList<UserBean> pokemonList = new ArrayList<UserBean>();
+		ArrayList<PokemonDto> pokemonList = new ArrayList<PokemonDto>();
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -27,23 +29,20 @@ public class PokemonDAO {
 			PreparedStatement ps = conn.prepareStatement(sql);
 
 			ResultSet rs = ps.executeQuery();
-			if(rs.next()) {
-				UserBean userDto = new UserBean();
-				userDto.setId(rs.getInt("id"));
-				userDto.setName(rs.getString("name"));
-				userDto.setType(rs.getString("type"));
-				userDto.setLive(rs.getString("live"));
-				userDto.setImg((Blob) rs.getBlob("img"));
-				pokemonList.add(userDto);
-			}else {
-				//アカウントが無ければnullを返す
-				return null;
+			while(rs.next()) {
+				PokemonDto pokemon = new PokemonDto();
+				pokemon.setId(rs.getInt("id"));
+				pokemon.setName(rs.getString("name"));
+				pokemon.setType(rs.getString("type"));
+				pokemon.setLive(rs.getString("live"));
+				pokemon.setImg((Blob) rs.getBlob("img"));
+				pokemonList.add(pokemon);
 			}
 			}catch(SQLException | ClassNotFoundException e) {
 				e.printStackTrace();
 				return null;
 			}
-		return ud;
+		return pokemonList;
 		}
 
 

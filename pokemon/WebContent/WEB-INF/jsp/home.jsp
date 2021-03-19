@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="java.util.ArrayList" %>
-    <%@ page import="model.UserBean" %>
+    <%@ page import="model.PokemonDto" %>
     <%
-    ArrayList<UserBean> beanList = (ArrayList<UserBean>)request.getAttribute("beanList");
+    ArrayList<PokemonDto> pokemonList = (ArrayList<PokemonDto>)request.getAttribute("pokemonList");
     %>
 <!DOCTYPE html>
 <html>
@@ -18,17 +18,18 @@
 	<link rel="stylesheet" type="text/css" href="Table_Responsive_v2/vendor/perfect-scrollbar/perfect-scrollbar.css">
 	<link rel="stylesheet" type="text/css" href="Table_Responsive_v2/css/util.css">
 	<link rel="stylesheet" type="text/css" href="Table_Responsive_v2/css/main.css">
+	<link rel="stylesheet" type="text/css" href="CSS/humburger.css">
+	<script src="JS/humburger.js"></script>
 	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
-	<script src="Table_Responsive_v2/js/main.js"></script>
 <title>ポケモン図鑑</title>
 </head>
 <body>
  <header>
     <nav id="nav">
       <ul>
-        <li><a href="#"">SUMPLE1</a></li>
-        <li><a href="#">SUMPLE2</a></li>
-        <li><a href="#">SUMPLE3</a></li>
+        <li><a href="SearchFirstGymLeader">ジム攻略</a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
       </ul>
     </nav>
     <div id="hamburger">
@@ -53,16 +54,18 @@
 								属性
 							</div>
 						</div>
-						<% for(UserBean bean:beanList){%>
+						<%
+						for(PokemonDto pokemon:pokemonList){
+						%>
 						<div class="row">
 							<div class="cell" data-title="id">
-								<%= bean.getId() %>
+								<%= pokemon.getId() %>
 							</div>
 							<div class="cell" data-title="name">
-								<%= bean.getName() %>
+								<%= pokemon.getName() %>
 							</div>
 							<div class="cell" data-title="type">
-								<%= bean.getType() %>
+								<%= pokemon.getType() %>
 							</div>
 						</div>
 						<% } //endfor %>
@@ -70,7 +73,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="Table_Responsive_v2/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="Jquery/jquery-3.2.1.min.js"></script>
 	<script src="Table_Responsive_v2/vendor/bootstrap/js/popper.js"></script>
 	<script src="Table_Responsive_v2/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="Table_Responsive_v2/vendor/select2/select2.min.js"></script>
