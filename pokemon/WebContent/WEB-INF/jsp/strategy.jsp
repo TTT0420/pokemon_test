@@ -32,7 +32,7 @@
       <span class="inner_line" id="line2"></span>
       <span class="inner_line" id="line3"></span>
     </div>
-    <h1></h1>
+    <h1>ジム攻略</h1>
   </header>
 
 
