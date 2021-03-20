@@ -42,25 +42,22 @@
             <div class="col-md-4 col-sm-6">
                 <div class="pricingTable blue">
                     <div class="pricingTable-header">
-                        <h3 class="title">aaa</h3>
-                        <span class="sub-title">aaa</span>
-                        <span class="year">aaa <br>aaa</span>
+                        <h3 class="title">ニビジム</h3>
+                        <span class="sub-title">ジムリーダー：<c:out value="${firstGymLeader.name }"></c:out></span>
                     </div>
                     <div class="price-value">
                         <div class="value">
-                            <span class="currency">a</span>
-                            <span class="amount">aaa<span>a</span></span>
-                            <span class="month">/month</span>
+                            <span class="amount"><img src="img/takeshi.png"/></span>
                         </div>
                     </div>
+                    <p></p>所持モンスター
                     <ul class="pricing-content">
-                        <li>ddddddddd</li>
-                        <li>gggggggggggggg</li>
-                        <li>gggggggg</li>
-                        <li>rrrrrrrrrrr</li>
-                        <li>hhhhhhhhhh</li>
+                        <li>イシツブテ　<img src="img/ishitsubute%20.gif"/></li>
+                        <li>イワーク　<img src="img/iwaku%20.gif"/></li>
+                        <li>-----</li>
+                        <li>-----</li>
+                        <li>-----</li>
                     </ul>
-                    <a href="#" class="pricingTable-signup">Sign up</a>
                 </div>
             </div>
         </div>

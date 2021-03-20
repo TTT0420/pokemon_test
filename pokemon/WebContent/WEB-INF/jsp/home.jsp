@@ -37,7 +37,7 @@
       <span class="inner_line" id="line2"></span>
       <span class="inner_line" id="line3"></span>
     </div>
-    <h1>テスト</h1>
+    <h1>ポケモン図鑑</h1>
   </header>
 	<div class="limiter">
 		<div class="container-table100">
